@@ -166,3 +166,12 @@ if __name__ == '__main__':
     run_dns_server_user()
     print("Encrypted Value:", encrypted_value)
     print("Decrypted Value:", decrypted_value)
+
+    encrypted_value = encrypt_with_aes(input_string, password, salt)
+    print("Encrypted Value:", encrypted_value)
+
+    try:
+        decrypted_value = decrypt_with_aes(encrypted_value, password, salt)
+        print("Decrypted Value:", decrypted_value)
+    except Exception as e:
+        print(f"Decryption failed: {e}")
